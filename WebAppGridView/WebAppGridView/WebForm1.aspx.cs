@@ -41,7 +41,22 @@ namespace WebAppGridView
 
         protected void OnUpdate(object sender, GridViewUpdateEventArgs e)
         {
+            TextBox txtName = (TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox1");
+            Label txtid = (Label)GridView1.Rows[e.RowIndex].FindControl("Label02");
+            int id = int.Parse(txtid.Text);
+            
 
+        }
+
+        public void UpdateData(String txtName,int id) {
+            SqlConnection _sqlconn = new SqlConnection(@"Data Source=FACULTY18;Initial Catalog=CUSTOMERINFO;Integrated Security=False;User ID=sa;Password=sa9;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            if (_sqlconn.State == System.Data.ConnectionState.Closed)
+                _sqlconn.Open();
+            SqlCommand _cmd = new SqlCommand("UPDATE CUSTOMERS SET NAME =@NAME WHERE CustomerId= @ID ", _sqlconn);
+            _cmd.Parameters.AddWithValue("@NAME",txtName);
+            _cmd.Parameters.AddWithValue("@ID", id);
+            _cmd.ExecuteNonQuery();
+            LoadGridview();
         }
     }
 }

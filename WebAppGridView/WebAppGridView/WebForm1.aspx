@@ -9,10 +9,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
-     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnCancelEdit" OnRowEditing="OnRowEdit" OnRowUpdating="OnUpdate">
+     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnCancelEdit" OnRowEditing="OnRowEdit" OnRowUpdating="OnUpdate" PageSize="2">
              
          <Columns>
-             <asp:BoundField DataField="CustomerId" HeaderText="Customer ID" />
+             <asp:TemplateField HeaderText="Customer ID">
+                 <EditItemTemplate>
+                      <asp:Label ID="Label02" runat="server" Text='<%# Bind("CustomerId") %>'></asp:Label>
+                 </EditItemTemplate>
+                 <ItemTemplate>
+                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("CustomerId") %>'></asp:Label>
+                 </ItemTemplate>
+             </asp:TemplateField>
              <asp:TemplateField HeaderText="Customer Name">
                  <EditItemTemplate>
                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Name") %>'></asp:TextBox>
