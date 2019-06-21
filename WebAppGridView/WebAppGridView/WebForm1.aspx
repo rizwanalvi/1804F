@@ -5,14 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnCancelEdit" OnRowEditing="OnRowEdit" OnRowUpdating="OnUpdate" PageSize="2">
+     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnCancelEdit" OnRowEditing="OnRowEdit" OnRowUpdating="OnUpdate" PageSize="2" CssClass="table">
              
          <Columns>
-             <asp:TemplateField HeaderText="Customer ID">
+             <asp:TemplateField HeaderText="Customer ID" >
                  <EditItemTemplate>
                       <asp:Label ID="Label02" runat="server" Text='<%# Bind("CustomerId") %>'></asp:Label>
                  </EditItemTemplate>
@@ -41,6 +42,12 @@
          </Columns>
         </asp:GridView>
     </div>
+       
+       
+            
+           
+           
+      
     </form>
    
 </body>
