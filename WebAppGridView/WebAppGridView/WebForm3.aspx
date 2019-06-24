@@ -36,7 +36,7 @@
             </td>
                      <td>
                          <asp:Button ID="Button1" Visible="false" runat="server" Text="Cancel" OnClick="Button1_Click" />
-                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Edit</asp:LinkButton></td>
+                         <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="LinkButton1_Click" />
 
         </tr>
             </ItemTemplate>
