@@ -13,8 +13,8 @@ namespace WebAppGridView
         {
             if (!IsPostBack)
             {
-                SqlConnection _sqconn = new SqlConnection(@"");
-                SqlCommand _cmd = new SqlCommand("", _sqconn);
+                SqlConnection _sqconn = new SqlConnection(@"Data Source=FACULTY18;Initial Catalog=CUSTOMERINFO;Integrated Security=False;User ID=sa;Password=sa9;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                SqlCommand _cmd = new SqlCommand("SELECT * FROM CUSTOMERS", _sqconn);
                 if (_sqconn.State == System.Data.ConnectionState.Closed)
                     _sqconn.Open();
                 Repeater1.DataSource = _cmd.ExecuteReader();
