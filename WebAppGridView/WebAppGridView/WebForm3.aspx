@@ -35,8 +35,8 @@
 
             </td>
                      <td>
-                         <asp:Button ID="Button1" Visible="false" runat="server" Text="Cancel" OnClick="Button1_Click" />
-                         <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="LinkButton1_Click" />
+                         <asp:Button ID="Button1" Visible="false" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-sm btn-danger" />
+                         <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="LinkButton1_Click" CssClass="btn btn-sm btn-primary" />
 
         </tr>
             </ItemTemplate>

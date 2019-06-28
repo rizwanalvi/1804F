@@ -48,11 +48,11 @@ namespace WebAppGridView
             RepeaterItem item = btnEdit.Parent as RepeaterItem;
             TextBox txtName = item.FindControl("TextBox1") as TextBox;
             Label lblName = item.FindControl("Label2") as Label;
-            Button btnCancel = item.FindControl("Button1") as Button;
-            btnCancel.Visible = false;
+            Button btnCancel = item.FindControl("Button2") as Button;
+            btnCancel.Visible = true;
             txtName.Visible = false;
             lblName.Visible = true;
-            btnEdit.Visible = true;
+            btnEdit.Visible = false;
 
 
         }
