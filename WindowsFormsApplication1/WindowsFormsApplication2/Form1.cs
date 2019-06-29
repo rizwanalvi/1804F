@@ -77,5 +77,12 @@ namespace WindowsFormsApplication2
             }
             // this.MdiChildren.Count().ToString();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            frmLogin frmLog = new frmLogin();
+            frmLog.Show();
+            frmLog.MdiParent = this;
+        }
     }
 }
