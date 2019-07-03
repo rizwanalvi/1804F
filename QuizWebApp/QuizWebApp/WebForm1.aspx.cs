@@ -43,7 +43,7 @@ namespace QuizWebApp
               SqlDataReader dReader =  _cmd.ExecuteReader();
             dReader.Read();
             Label1.Text = dReader["Question"].ToString();
-            RadioButton1.Text = dReader["OptionA"].ToString();
+            //RadioButton1.Text = dReader["OptionA"].ToString();
 
 
         }
@@ -60,7 +60,7 @@ namespace QuizWebApp
             SqlDataReader dReader = _cmd.ExecuteReader();
             dReader.Read();
             Label1.Text = dReader["Question"].ToString();
-            RadioButton1.Text = dReader["OptionA"].ToString();
+          //  RadioButton1.Text = dReader["OptionA"].ToString();
 
 
         }
