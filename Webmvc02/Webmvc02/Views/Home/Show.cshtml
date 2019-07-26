@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">mOBILE id</th>
+            <th scope="col">mOBILE NAME</th>
+            <th scope="col">pOSTER</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <th scope="row">@ViewBag.MbData.MobileId</th>
+                <td>@ViewBag.MbData.MobileName</td>
+                <td><img src="@ViewBag.MbData.ImagePath" alt="Alternate Text" height="150" width="150" /></td>
+                <td><a href="/Home/index">Back</a></td>
+            </tr>
+
+       
+
+    </tbody>
+</table>

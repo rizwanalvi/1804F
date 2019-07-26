@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">mOBILE id</th>
+            <th scope="col">mOBILE NAME</th>
+            <th scope="col">pOSTER</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.MobileData)
+        {
+            <tr>
+                <th scope="row">@item.MobileId</th>
+                <td>@item.MobileName</td>
+                <td><img src="@item.ImagePath" alt="Alternate Text" height="150" width="150"/></td>
+                <td><a href="./Show/@item.MobileId">sHOW</a></td>
+            </tr>
+           
+        }
+
+    </tbody>
+</table>
+

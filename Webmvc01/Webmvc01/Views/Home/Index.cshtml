@@ -1,0 +1,36 @@
+﻿@model ICollection<Webmvc01.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home Controller</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">ID</th>
+            <th>Student Name</th>
+            <th>Semester</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model)
+        {
+            
+
+
+            <tr>
+                <th scope="row">@item.StudentID</th>
+                <td>@item.StudentName</td>
+                <td>@item.Semester</td>
+                <td><a href="#">Show</a></td>
+            </tr>
+          
+        }
+
+
+
+      
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model Webmvc02.Models.Mobile
+@{
+    ViewBag.Title = "AddData";
+}
+
+<h2>AddData</h2>
+
+
+@using (Html.BeginForm("AddData", "Home", FormMethod.Post))
+{
+
+
+    <input type="submit" name="name" value="Add Data" />
+
+}
+
+
+

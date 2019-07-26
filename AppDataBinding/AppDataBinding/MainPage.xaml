@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="AppDataBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppDataBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+      
+            <ListView x:Name="lstData" Height="auto" Width="300" ItemsSource="{Binding}" Grid.Column="0" ItemClick="lstData_ItemClick" IsItemClickEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Height="150" Width="150" >
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding ImagePath}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                               
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock  FontSize="18" Foreground="Red" FontWeight="Bold" Text="{Binding FruitName}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Season}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Price}"/>
+
+                                </StackPanel>
+                            </Grid>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        <StackPanel Grid.Column="1" Width="800">
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="520" ItemsSource="{Binding}"  >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Height="50" Width="50" >
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding ImagePath}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock  FontSize="18" Foreground="Red" FontWeight="Bold" Text="{Binding FruitName}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Season}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Price}"/>
+
+                                </StackPanel>
+                            </Grid>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                
+            </ComboBox>
+
+            <TextBlock x:Name="lblName"  FontSize="18" Foreground="Red" FontWeight="Bold" Text="apple" />
+            <TextBlock x:Name="lbSeason" FontSize="12" Foreground="Gray" FontWeight="Bold" />
+            <TextBlock x:Name="lblPrice"  FontSize="12" Foreground="Gray" FontWeight="Bold" />
+            <GridView x:Name="gridView" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" ItemsSource="{Binding}">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Height="50" Width="50" >
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding ImagePath}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock  FontSize="18" Foreground="Red" FontWeight="Bold" Text="{Binding FruitName}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Season}"/>
+                                    <TextBlock  FontSize="12" Foreground="Gray" FontWeight="Bold" Text="{Binding Price}"/>
+
+                                </StackPanel>
+                            </Grid>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                
+            </GridView>
+        </StackPanel>
+       
+
+
+    </Grid>
+</Page>
